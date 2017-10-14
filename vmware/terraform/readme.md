@@ -1,4 +1,4 @@
-# Template - IBM MQ Series V9 on a single VM
+# Template - IBM MQ Series V9 on a single virtual machine
 Template Version - 1.0
 
 ## Description
@@ -18,8 +18,9 @@ Install and configure IBM MQ V9 on a single Linux Node.<br>
 ### Operating Systems Supported
 
 Red Hat Enterprise Linux 7<br>
-Red Hat Enterprise Linux 6<br>
+Red Hat Enterprise Linux 6 (MQ8 Only)<br>
 Ubuntu 16.04<br>
+Ubuntu 14.04<br>
 <br>
 ### Topology
 
@@ -37,8 +38,8 @@ IBM MQ Series V9.0<br>
 ### Usage and Special Notes
 
 1. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>
-2. IBM Knowledge Center for IBM MQ Series 9.0 - https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.0.0/com.ibm.mq.helphome.v90.doc/WelcomePagev9r0.htm<br>
-3. IBM Support Portal - https://www.ibm.com/support/home/<br>
+2. IBM Knowledge Center for IBM MQ Series 9.0 - <a href=\"https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.0.0/com.ibm.mq.helphome.v90.doc/WelcomePagev9r0.htm\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.0.0/com.ibm.mq.helphome.v90.doc/WelcomePagev9r0.htm</a><br>
+3. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/</a><br>
 <br>
 
 
@@ -76,9 +77,10 @@ VMware vSphere
 
 The following Operating Systems are supported for software defined in this template.
 
-- RHEL 6.x
+- RHEL 6.x (Not for MQ9)
 - RHEL 7.x
 - Ubuntu 14.0.4
+- Ubuntu 16
 
 
 ### Nodes Description
@@ -177,12 +179,12 @@ The following standard operating system libraries are required in the relevant O
   <tr>
     <td>redhat WMQ8.0</td>
     <td>x86_64</td>
-    <td>ksh, binutils, gcc, glibc, libgcc, openssl, gtk2, libstdc++.x86_64, libstdc++.i686</td>
+    <td>ksh, binutils, gcc, glibc, libgcc, openssl, gtk2, libstdc++.x86_64, libstdc++.i686, redhat-lsb-core</td>
   </tr>
   <tr>
     <td>debian WMQ8.0</td>
     <td>x86_64</td>
-    <td>ksh, binutils, gcc, gcc-multilib, openssl, libgtk2.0-0, rpm</td>
+    <td>ksh, binutils, gcc, gcc-multilib, openssl, libgtk2.0-0, rpm, lsb-core</td>
   </tr>
   <tr>
     <td>debian WMQ9.0</td>
