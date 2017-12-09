@@ -22,7 +22,6 @@ variable "ibm_pm_private_ssh_key" {
 variable "user_public_ssh_key" {
   type = "string"
   description = "User defined public SSH key used to connect to the virtual machine. The format must be in openSSH."
-  default = "None"
 }
 
 ##############################################################
@@ -61,15 +60,6 @@ variable "ibm_stack_name" {
   description = "A unique stack name."
 }
 
-#### Default OS Admin User Map ####
-variable "default_os_admin_user" {
-  type        = "map"
-  description = "look up os_admin_user using resource image"
-  default = {
-    UBUNTU_16_64 = "root"
-    REDHAT_7_64 = "root"
-  }
-}
 
 ##### Environment variables #####
 #Variable : ibm_pm_access_token
@@ -100,217 +90,190 @@ variable "ibm_sw_repo_password" {
 variable "ibm_sw_repo_user" {
   type = "string"
   description = "IBM Software Repo Username"
-  default = "repouser"
 }
 
 
-##### MQV9Node01 variables #####
-#Variable : MQV9Node01-image
-variable "MQV9Node01-image" {
+##### MQNode01 variables #####
+#Variable : MQNode01-image
+variable "MQNode01-image" {
   type = "string"
   description = "Operating system image id / template that should be used when creating the virtual image"
-  default = "REDHAT_7_64"
 }
 
-#Variable : MQV9Node01-mgmt-network-public
-variable "MQV9Node01-mgmt-network-public" {
-  type = "string"
-  description = "Expose and use public IP of virtual machine for internal communication"
-  default = "true"
-}
-
-#Variable : MQV9Node01-name
-variable "MQV9Node01-name" {
+#Variable : MQNode01-name
+variable "MQNode01-name" {
   type = "string"
   description = "Short hostname of virtual machine"
 }
 
-#Variable : MQV9Node01-os_admin_user
-variable "MQV9Node01-os_admin_user" {
+#Variable : MQNode01-os_admin_user
+variable "MQNode01-os_admin_user" {
   type = "string"
   description = "Name of the admin user account in the virtual machine that will be accessed via SSH"
 }
 
-#Variable : MQV9Node01_wmq_advanced
-variable "MQV9Node01_wmq_advanced" {
+#Variable : MQNode01_wmq_advanced
+variable "MQNode01_wmq_advanced" {
   type = "string"
   description = "Install IBM MQ Advanced components: File Transfer, IBM MQ Telemetry, and Advanced Message Security."
-  default = "false"
 }
 
-#Variable : MQV9Node01_wmq_fixpack
-variable "MQV9Node01_wmq_fixpack" {
+#Variable : MQNode01_wmq_fixpack
+variable "MQNode01_wmq_fixpack" {
   type = "string"
   description = "The fixpack of IBM MQ to install."
-  default = "1"
 }
 
-#Variable : MQV9Node01_wmq_net_core_rmem_default
-variable "MQV9Node01_wmq_net_core_rmem_default" {
+#Variable : MQNode01_wmq_net_core_rmem_default
+variable "MQNode01_wmq_net_core_rmem_default" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_core_rmem_default"
-  default = "10240"
 }
 
-#Variable : MQV9Node01_wmq_net_core_rmem_max
-variable "MQV9Node01_wmq_net_core_rmem_max" {
+#Variable : MQNode01_wmq_net_core_rmem_max
+variable "MQNode01_wmq_net_core_rmem_max" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_core_rmem_max"
-  default = "4194304"
 }
 
-#Variable : MQV9Node01_wmq_net_core_wmem_default
-variable "MQV9Node01_wmq_net_core_wmem_default" {
+#Variable : MQNode01_wmq_net_core_wmem_default
+variable "MQNode01_wmq_net_core_wmem_default" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_core_wmem_default"
-  default = "262144"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_fin_timeout
-variable "MQV9Node01_wmq_net_ipv4_tcp_fin_timeout" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_fin_timeout
+variable "MQNode01_wmq_net_ipv4_tcp_fin_timeout" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_fin_timeout"
-  default = "60"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_keepalive_intvl
-variable "MQV9Node01_wmq_net_ipv4_tcp_keepalive_intvl" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_keepalive_intvl
+variable "MQNode01_wmq_net_ipv4_tcp_keepalive_intvl" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_intvl"
-  default = "75"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_keepalive_time
-variable "MQV9Node01_wmq_net_ipv4_tcp_keepalive_time" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_keepalive_time
+variable "MQNode01_wmq_net_ipv4_tcp_keepalive_time" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_time"
-  default = "7200"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_rmem
-variable "MQV9Node01_wmq_net_ipv4_tcp_rmem" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_rmem
+variable "MQNode01_wmq_net_ipv4_tcp_rmem" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_rmem"
-  default = "4096    87380   4194304"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_sack
-variable "MQV9Node01_wmq_net_ipv4_tcp_sack" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_sack
+variable "MQNode01_wmq_net_ipv4_tcp_sack" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_sack"
-  default = "1"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_timestamps
-variable "MQV9Node01_wmq_net_ipv4_tcp_timestamps" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_timestamps
+variable "MQNode01_wmq_net_ipv4_tcp_timestamps" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_timestamps"
-  default = "1"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_window_scaling
-variable "MQV9Node01_wmq_net_ipv4_tcp_window_scaling" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_window_scaling
+variable "MQNode01_wmq_net_ipv4_tcp_window_scaling" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_window_scaling"
-  default = "1"
 }
 
-#Variable : MQV9Node01_wmq_net_ipv4_tcp_wmem
-variable "MQV9Node01_wmq_net_ipv4_tcp_wmem" {
+#Variable : MQNode01_wmq_net_ipv4_tcp_wmem
+variable "MQNode01_wmq_net_ipv4_tcp_wmem" {
   type = "string"
   description = "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_wmem"
-  default = "4096    87380   4194304"
 }
 
-#Variable : MQV9Node01_wmq_perms
-variable "MQV9Node01_wmq_perms" {
+#Variable : MQNode01_wmq_perms
+variable "MQNode01_wmq_perms" {
   type = "string"
   description = "Default permissions for IBM MQ files on Unix"
-  default = "755"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_description
-variable "MQV9Node01_wmq_qmgr_qmgr1_description" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_description
+variable "MQNode01_wmq_qmgr_qmgr1_description" {
   type = "string"
   description = "Description of the Queue Manager"
-  default = "Default Queue Manager"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_dlq
-variable "MQV9Node01_wmq_qmgr_qmgr1_dlq" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_dlq
+variable "MQNode01_wmq_qmgr_qmgr1_dlq" {
   type = "string"
   description = "Queue Manager dead letter queue"
-  default = "SYSTEM.DEAD.LETTER.QUEUE"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_listener_port
-variable "MQV9Node01_wmq_qmgr_qmgr1_listener_port" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_listener_port
+variable "MQNode01_wmq_qmgr_qmgr1_listener_port" {
   type = "string"
   description = "Port the Queue Manager listens on."
-  default = "1414"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_loggingtype
-variable "MQV9Node01_wmq_qmgr_qmgr1_loggingtype" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_loggingtype
+variable "MQNode01_wmq_qmgr_qmgr1_loggingtype" {
   type = "string"
   description = "Type of logging to use ll(Linear), lc(Circular)"
-  default = "lc"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_logsize
-variable "MQV9Node01_wmq_qmgr_qmgr1_logsize" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_logsize
+variable "MQNode01_wmq_qmgr_qmgr1_logsize" {
   type = "string"
   description = "Size of the IBM MQ Logs"
-  default = "16384"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_name
-variable "MQV9Node01_wmq_qmgr_qmgr1_name" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_name
+variable "MQNode01_wmq_qmgr_qmgr1_name" {
   type = "string"
   description = "Name of the Queue Manager to Create"
-  default = "QMGR1"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_primarylogs
-variable "MQV9Node01_wmq_qmgr_qmgr1_primarylogs" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_primarylogs
+variable "MQNode01_wmq_qmgr_qmgr1_primarylogs" {
   type = "string"
   description = "Number of primary logs to create."
-  default = "10"
 }
 
-#Variable : MQV9Node01_wmq_qmgr_qmgr1_secondarylogs
-variable "MQV9Node01_wmq_qmgr_qmgr1_secondarylogs" {
+#Variable : MQNode01_wmq_qmgr_qmgr1_secondarylogs
+variable "MQNode01_wmq_qmgr_qmgr1_secondarylogs" {
   type = "string"
   description = "Number of Secondary Logs"
-  default = "20"
 }
 
-#Variable : MQV9Node01_wmq_service_name
-variable "MQV9Node01_wmq_service_name" {
+#Variable : MQNode01_wmq_service_name
+variable "MQNode01_wmq_service_name" {
   type = "string"
   description = "WebSphere MQ service name"
-  default = "mq"
 }
 
-#Variable : MQV9Node01_wmq_swap_file
-variable "MQV9Node01_wmq_swap_file" {
+#Variable : MQNode01_wmq_swap_file
+variable "MQNode01_wmq_swap_file" {
   type = "string"
   description = "Swap file name"
-  default = "/swapfile"
 }
 
-#Variable : MQV9Node01_wmq_swap_file_size
-variable "MQV9Node01_wmq_swap_file_size" {
+#Variable : MQNode01_wmq_swap_file_size
+variable "MQNode01_wmq_swap_file_size" {
   type = "string"
   description = "UNIX Swap size in megabytes"
-  default = "512"
 }
 
-#Variable : MQV9Node01_wmq_version
-variable "MQV9Node01_wmq_version" {
+#Variable : MQNode01_wmq_version
+variable "MQNode01_wmq_version" {
   type = "string"
   description = "The Version of IBM MQ to install, eg, 8.0"
-  default = "9.0"
+}
+
+
+##### virtualmachine variables #####
+#Variable : MQNode01-mgmt-network-public
+variable "MQNode01-mgmt-network-public" {
+  type = "string"
+  description = "Expose and use public IP of virtual machine for internal communication"
 }
 
 
@@ -318,106 +281,96 @@ variable "MQV9Node01_wmq_version" {
 ##### domain name #####
 variable "runtime_domain" {
   description = "domain name"
-  default = "cam.ibm.com"
 }
 
 
 #########################################################
-##### Resource : MQV9Node01
+##### Resource : MQNode01
 #########################################################
 
 
-#Parameter : MQV9Node01_datacenter
-variable "MQV9Node01_datacenter" {
+#Parameter : MQNode01_datacenter
+variable "MQNode01_datacenter" {
   type = "string"
   description = "IBMCloud datacenter where infrastructure resources will be deployed"
-  default = "dal05"
 }
 
 
-#Parameter : MQV9Node01_private_network_only
-variable "MQV9Node01_private_network_only" {
+#Parameter : MQNode01_private_network_only
+variable "MQNode01_private_network_only" {
   type = "string"
   description = "Provision the virtual machine with only private IP"
-  default = "false"
 }
 
 
-#Parameter : MQV9Node01_number_of_cores
-variable "MQV9Node01_number_of_cores" {
+#Parameter : MQNode01_number_of_cores
+variable "MQNode01_number_of_cores" {
   type = "string"
   description = "Number of CPU cores, which is required to be a positive Integer"
-  default = "2"
 }
 
 
-#Parameter : MQV9Node01_memory
-variable "MQV9Node01_memory" {
+#Parameter : MQNode01_memory
+variable "MQNode01_memory" {
   type = "string"
   description = "Amount of Memory (MBs), which is required to be one or more times of 1024"
-  default = "2048"
 }
 
 
-#Parameter : MQV9Node01_network_speed
-variable "MQV9Node01_network_speed" {
+#Parameter : MQNode01_network_speed
+variable "MQNode01_network_speed" {
   type = "string"
   description = "Bandwidth of network communication applied to the virtual machine"
-  default = "10"
 }
 
 
-#Parameter : MQV9Node01_hourly_billing
-variable "MQV9Node01_hourly_billing" {
+#Parameter : MQNode01_hourly_billing
+variable "MQNode01_hourly_billing" {
   type = "string"
   description = "Billing cycle: hourly billed or monthly billed"
-  default = "true"
 }
 
 
-#Parameter : MQV9Node01_dedicated_acct_host_only
-variable "MQV9Node01_dedicated_acct_host_only" {
+#Parameter : MQNode01_dedicated_acct_host_only
+variable "MQNode01_dedicated_acct_host_only" {
   type = "string"
   description = "Shared or dedicated host, where dedicated host usually means higher performance and cost"
-  default = "false"
 }
 
 
-#Parameter : MQV9Node01_local_disk
-variable "MQV9Node01_local_disk" {
+#Parameter : MQNode01_local_disk
+variable "MQNode01_local_disk" {
   type = "string"
   description = "User local disk or SAN disk"
-  default = "false"
 }
 
-variable "MQV9Node01_root_disk_size" {
+variable "MQNode01_root_disk_size" {
   type = "string"
-  description = "Root Disk Size - MQV9Node01"
-  default = "25"
+  description = "Root Disk Size - MQNode01"
 }
 
-resource "ibm_compute_vm_instance" "MQV9Node01" {
-  hostname = "${var.MQV9Node01-name}"
-  os_reference_code = "${var.MQV9Node01-image}"
+resource "ibm_compute_vm_instance" "MQNode01" {
+  hostname = "${var.MQNode01-name}"
+  os_reference_code = "${var.MQNode01-image}"
   domain = "${var.runtime_domain}"
-  datacenter = "${var.MQV9Node01_datacenter}"
-  network_speed = "${var.MQV9Node01_network_speed}"
-  hourly_billing = "${var.MQV9Node01_hourly_billing}"
-  private_network_only = "${var.MQV9Node01_private_network_only}"
-  cores = "${var.MQV9Node01_number_of_cores}"
-  memory = "${var.MQV9Node01_memory}"
-  disks = ["${var.MQV9Node01_root_disk_size}"]
-  dedicated_acct_host_only = "${var.MQV9Node01_dedicated_acct_host_only}"
-  local_disk = "${var.MQV9Node01_local_disk}"
+  datacenter = "${var.MQNode01_datacenter}"
+  network_speed = "${var.MQNode01_network_speed}"
+  hourly_billing = "${var.MQNode01_hourly_billing}"
+  private_network_only = "${var.MQNode01_private_network_only}"
+  cores = "${var.MQNode01_number_of_cores}"
+  memory = "${var.MQNode01_memory}"
+  disks = ["${var.MQNode01_root_disk_size}"]
+  dedicated_acct_host_only = "${var.MQNode01_dedicated_acct_host_only}"
+  local_disk = "${var.MQNode01_local_disk}"
   ssh_key_ids = ["${data.ibm_compute_ssh_key.ibm_pm_public_key.id}"]
   # Specify the ssh connection
   connection {
-    user = "${var.MQV9Node01-os_admin_user == "" ? lookup(var.default_os_admin_user, var.MQV9Node01-image) : var.MQV9Node01-os_admin_user}"
+    user = "${var.MQNode01-os_admin_user}"
     private_key = "${base64decode(var.ibm_pm_private_ssh_key)}"
   }
 
   provisioner "file" {
-    destination = "MQV9Node01_add_ssh_key.sh"
+    destination = "MQNode01_add_ssh_key.sh"
     content     = <<EOF
 # =================================================================
 # Licensed Materials - Property of IBM
@@ -464,31 +417,31 @@ EOF
   # Execute the script remotely
   provisioner "remote-exec" {
     inline = [
-      "bash -c 'chmod +x MQV9Node01_add_ssh_key.sh'",
-      "bash -c './MQV9Node01_add_ssh_key.sh  \"${var.MQV9Node01-os_admin_user}\" \"${var.user_public_ssh_key}\">> MQV9Node01_add_ssh_key.log 2>&1'"
+      "bash -c 'chmod +x MQNode01_add_ssh_key.sh'",
+      "bash -c './MQNode01_add_ssh_key.sh  \"${var.MQNode01-os_admin_user}\" \"${var.user_public_ssh_key}\">> MQNode01_add_ssh_key.log 2>&1'"
     ]
   }
 
 }
 
 #########################################################
-##### Resource : MQV9Node01_chef_bootstrap_comp
+##### Resource : MQNode01_chef_bootstrap_comp
 #########################################################
 
-resource "camc_bootstrap" "MQV9Node01_chef_bootstrap_comp" {
-  depends_on = ["camc_vaultitem.VaultItem","ibm_compute_vm_instance.MQV9Node01"]
-  name = "MQV9Node01_chef_bootstrap_comp"
+resource "camc_bootstrap" "MQNode01_chef_bootstrap_comp" {
+  depends_on = ["camc_vaultitem.VaultItem","ibm_compute_vm_instance.MQNode01"]
+  name = "MQNode01_chef_bootstrap_comp"
   camc_endpoint = "${var.ibm_pm_service}/v1/bootstrap/chef"
   access_token = "${var.ibm_pm_access_token}"
   skip_ssl_verify = true
   trace = true
   data = <<EOT
 {
-  "os_admin_user": "${var.MQV9Node01-os_admin_user == "default"? lookup(var.default_os_admin_user, var.MQV9Node01-image) : var.MQV9Node01-os_admin_user}",
+  "os_admin_user": "${var.MQNode01-os_admin_user}",
   "stack_id": "${random_id.stack_id.hex}",
   "environment_name": "_default",
-  "host_ip": "${var.MQV9Node01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQV9Node01.ipv4_address_private : ibm_compute_vm_instance.MQV9Node01.ipv4_address}",
-  "node_name": "${var.MQV9Node01-name}",
+  "host_ip": "${var.MQNode01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQNode01.ipv4_address_private : ibm_compute_vm_instance.MQNode01.ipv4_address}",
+  "node_name": "${var.MQNode01-name}",
   "node_attributes": {
     "ibm_internal": {
       "stack_id": "${random_id.stack_id.hex}",
@@ -505,23 +458,23 @@ EOT
 
 
 #########################################################
-##### Resource : MQV9Node01_wmq_create_qmgrs
+##### Resource : MQNode01_wmq_create_qmgrs
 #########################################################
 
-resource "camc_softwaredeploy" "MQV9Node01_wmq_create_qmgrs" {
-  depends_on = ["camc_softwaredeploy.MQV9Node01_wmq_v9_install"]
-  name = "MQV9Node01_wmq_create_qmgrs"
+resource "camc_softwaredeploy" "MQNode01_wmq_create_qmgrs" {
+  depends_on = ["camc_softwaredeploy.MQNode01_wmq_v9_install"]
+  name = "MQNode01_wmq_create_qmgrs"
   camc_endpoint = "${var.ibm_pm_service}/v1/software_deployment/chef"
   access_token = "${var.ibm_pm_access_token}"
   skip_ssl_verify = true
   trace = true
   data = <<EOT
 {
-  "os_admin_user": "${var.MQV9Node01-os_admin_user == "default"? lookup(var.default_os_admin_user, var.MQV9Node01-image) : var.MQV9Node01-os_admin_user}",
+  "os_admin_user": "${var.MQNode01-os_admin_user}",
   "stack_id": "${random_id.stack_id.hex}",
   "environment_name": "_default",
-  "host_ip": "${var.MQV9Node01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQV9Node01.ipv4_address_private : ibm_compute_vm_instance.MQV9Node01.ipv4_address}",
-  "node_name": "${var.MQV9Node01-name}",
+  "host_ip": "${var.MQNode01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQNode01.ipv4_address_private : ibm_compute_vm_instance.MQNode01.ipv4_address}",
+  "node_name": "${var.MQNode01-name}",
   "runlist": "role[wmq_create_qmgrs]",
   "node_attributes": {
     "ibm": {
@@ -534,14 +487,14 @@ resource "camc_softwaredeploy" "MQV9Node01_wmq_create_qmgrs" {
     "wmq": {
       "qmgr": {
         "qmgr1": {
-          "description": "${var.MQV9Node01_wmq_qmgr_qmgr1_description}",
-          "dlq": "${var.MQV9Node01_wmq_qmgr_qmgr1_dlq}",
-          "listener_port": "${var.MQV9Node01_wmq_qmgr_qmgr1_listener_port}",
-          "loggingtype": "${var.MQV9Node01_wmq_qmgr_qmgr1_loggingtype}",
-          "logsize": "${var.MQV9Node01_wmq_qmgr_qmgr1_logsize}",
-          "name": "${var.MQV9Node01_wmq_qmgr_qmgr1_name}",
-          "primarylogs": "${var.MQV9Node01_wmq_qmgr_qmgr1_primarylogs}",
-          "secondarylogs": "${var.MQV9Node01_wmq_qmgr_qmgr1_secondarylogs}"
+          "description": "${var.MQNode01_wmq_qmgr_qmgr1_description}",
+          "dlq": "${var.MQNode01_wmq_qmgr_qmgr1_dlq}",
+          "listener_port": "${var.MQNode01_wmq_qmgr_qmgr1_listener_port}",
+          "loggingtype": "${var.MQNode01_wmq_qmgr_qmgr1_loggingtype}",
+          "logsize": "${var.MQNode01_wmq_qmgr_qmgr1_logsize}",
+          "name": "${var.MQNode01_wmq_qmgr_qmgr1_name}",
+          "primarylogs": "${var.MQNode01_wmq_qmgr_qmgr1_primarylogs}",
+          "secondarylogs": "${var.MQNode01_wmq_qmgr_qmgr1_secondarylogs}"
         }
       }
     }
@@ -561,23 +514,23 @@ EOT
 
 
 #########################################################
-##### Resource : MQV9Node01_wmq_v9_install
+##### Resource : MQNode01_wmq_v9_install
 #########################################################
 
-resource "camc_softwaredeploy" "MQV9Node01_wmq_v9_install" {
-  depends_on = ["camc_bootstrap.MQV9Node01_chef_bootstrap_comp"]
-  name = "MQV9Node01_wmq_v9_install"
+resource "camc_softwaredeploy" "MQNode01_wmq_v9_install" {
+  depends_on = ["camc_bootstrap.MQNode01_chef_bootstrap_comp"]
+  name = "MQNode01_wmq_v9_install"
   camc_endpoint = "${var.ibm_pm_service}/v1/software_deployment/chef"
   access_token = "${var.ibm_pm_access_token}"
   skip_ssl_verify = true
   trace = true
   data = <<EOT
 {
-  "os_admin_user": "${var.MQV9Node01-os_admin_user == "default"? lookup(var.default_os_admin_user, var.MQV9Node01-image) : var.MQV9Node01-os_admin_user}",
+  "os_admin_user": "${var.MQNode01-os_admin_user}",
   "stack_id": "${random_id.stack_id.hex}",
   "environment_name": "_default",
-  "host_ip": "${var.MQV9Node01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQV9Node01.ipv4_address_private : ibm_compute_vm_instance.MQV9Node01.ipv4_address}",
-  "node_name": "${var.MQV9Node01-name}",
+  "host_ip": "${var.MQNode01-mgmt-network-public == "false" ? ibm_compute_vm_instance.MQNode01.ipv4_address_private : ibm_compute_vm_instance.MQNode01.ipv4_address}",
+  "node_name": "${var.MQNode01-name}",
   "runlist": "role[wmq_v9_install]",
   "node_attributes": {
     "ibm": {
@@ -590,24 +543,24 @@ resource "camc_softwaredeploy" "MQV9Node01_wmq_v9_install" {
       "roles": "[wmq_v9_install]"
     },
     "wmq": {
-      "advanced": "${var.MQV9Node01_wmq_advanced}",
-      "fixpack": "${var.MQV9Node01_wmq_fixpack}",
-      "net_core_rmem_default": "${var.MQV9Node01_wmq_net_core_rmem_default}",
-      "net_core_rmem_max": "${var.MQV9Node01_wmq_net_core_rmem_max}",
-      "net_core_wmem_default": "${var.MQV9Node01_wmq_net_core_wmem_default}",
-      "net_ipv4_tcp_fin_timeout": "${var.MQV9Node01_wmq_net_ipv4_tcp_fin_timeout}",
-      "net_ipv4_tcp_keepalive_intvl": "${var.MQV9Node01_wmq_net_ipv4_tcp_keepalive_intvl}",
-      "net_ipv4_tcp_keepalive_time": "${var.MQV9Node01_wmq_net_ipv4_tcp_keepalive_time}",
-      "net_ipv4_tcp_rmem": "${var.MQV9Node01_wmq_net_ipv4_tcp_rmem}",
-      "net_ipv4_tcp_sack": "${var.MQV9Node01_wmq_net_ipv4_tcp_sack}",
-      "net_ipv4_tcp_timestamps": "${var.MQV9Node01_wmq_net_ipv4_tcp_timestamps}",
-      "net_ipv4_tcp_window_scaling": "${var.MQV9Node01_wmq_net_ipv4_tcp_window_scaling}",
-      "net_ipv4_tcp_wmem": "${var.MQV9Node01_wmq_net_ipv4_tcp_wmem}",
-      "perms": "${var.MQV9Node01_wmq_perms}",
-      "service_name": "${var.MQV9Node01_wmq_service_name}",
-      "swap_file": "${var.MQV9Node01_wmq_swap_file}",
-      "swap_file_size": "${var.MQV9Node01_wmq_swap_file_size}",
-      "version": "${var.MQV9Node01_wmq_version}"
+      "advanced": "${var.MQNode01_wmq_advanced}",
+      "fixpack": "${var.MQNode01_wmq_fixpack}",
+      "net_core_rmem_default": "${var.MQNode01_wmq_net_core_rmem_default}",
+      "net_core_rmem_max": "${var.MQNode01_wmq_net_core_rmem_max}",
+      "net_core_wmem_default": "${var.MQNode01_wmq_net_core_wmem_default}",
+      "net_ipv4_tcp_fin_timeout": "${var.MQNode01_wmq_net_ipv4_tcp_fin_timeout}",
+      "net_ipv4_tcp_keepalive_intvl": "${var.MQNode01_wmq_net_ipv4_tcp_keepalive_intvl}",
+      "net_ipv4_tcp_keepalive_time": "${var.MQNode01_wmq_net_ipv4_tcp_keepalive_time}",
+      "net_ipv4_tcp_rmem": "${var.MQNode01_wmq_net_ipv4_tcp_rmem}",
+      "net_ipv4_tcp_sack": "${var.MQNode01_wmq_net_ipv4_tcp_sack}",
+      "net_ipv4_tcp_timestamps": "${var.MQNode01_wmq_net_ipv4_tcp_timestamps}",
+      "net_ipv4_tcp_window_scaling": "${var.MQNode01_wmq_net_ipv4_tcp_window_scaling}",
+      "net_ipv4_tcp_wmem": "${var.MQNode01_wmq_net_ipv4_tcp_wmem}",
+      "perms": "${var.MQNode01_wmq_perms}",
+      "service_name": "${var.MQNode01_wmq_service_name}",
+      "swap_file": "${var.MQNode01_wmq_swap_file}",
+      "swap_file_size": "${var.MQNode01_wmq_swap_file_size}",
+      "version": "${var.MQNode01_wmq_version}"
     }
   },
   "vault_content": {
@@ -644,15 +597,15 @@ resource "camc_vaultitem" "VaultItem" {
 EOT
 }
 
-output "MQV9Node01_ip" {
-  value = "Private : ${ibm_compute_vm_instance.MQV9Node01.ipv4_address_private} & Public : ${ibm_compute_vm_instance.MQV9Node01.ipv4_address}"
+output "MQNode01_ip" {
+  value = "Private : ${ibm_compute_vm_instance.MQNode01.ipv4_address_private} & Public : ${ibm_compute_vm_instance.MQNode01.ipv4_address}"
 }
 
-output "MQV9Node01_name" {
-  value = "${var.MQV9Node01-name}"
+output "MQNode01_name" {
+  value = "${var.MQNode01-name}"
 }
 
-output "MQV9Node01_roles" {
+output "MQNode01_roles" {
   value = "wmq_create_qmgrs,wmq_v9_install"
 }
 

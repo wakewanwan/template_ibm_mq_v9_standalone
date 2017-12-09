@@ -32,7 +32,7 @@ IBM MQ V9.0<br>
 <br>
 ### Default Virtual Machine Settings
 
- t2.medium, vCPU 2, Mem (GiB) 4, EBS (GB) 25<br>
+ t2.medium, vCPU 2, Mem (GiB) 4, EBS (GB) 100<br>
 <br>
 ### Usage and Special Notes
 
@@ -76,9 +76,10 @@ Amazon EC2
 
 The following Operating Systems are supported for software defined in this template.
 
-- RHEL 6.x
+- RHEL 6.x (Not for MQ9)
 - RHEL 7.x
 - Ubuntu 14.0.4
+- Ubuntu 16
 
 
 ### Nodes Description
@@ -92,12 +93,12 @@ The following table describes the nodes and relevant software component deployed
     <th>Description</th>
   </tr>
   <tr>
-    <td>MQV9Node01</code></td>
+    <td>MQNode01</code></td>
     <td>wmq_v9_install</code></td>
     <td>WMQ V9 Install on linix</code></td>
   </tr>
   <tr>
-    <td>MQV9Node01</code></td>
+    <td>MQNode01</code></td>
     <td>wmq_create_qmgrs</code></td>
     <td>WMQ Configure Queue Manager</code></td>
   </tr>
@@ -177,12 +178,12 @@ The following standard operating system libraries are required in the relevant O
   <tr>
     <td>redhat WMQ8.0</td>
     <td>x86_64</td>
-    <td>ksh, binutils, gcc, glibc, libgcc, openssl, gtk2, libstdc++.x86_64, libstdc++.i686</td>
+    <td>ksh, binutils, gcc, glibc, libgcc, openssl, gtk2, libstdc++.x86_64, libstdc++.i686, redhat-lsb-core</td>
   </tr>
   <tr>
     <td>debian WMQ8.0</td>
     <td>x86_64</td>
-    <td>ksh, binutils, gcc, gcc-multilib, openssl, libgtk2.0-0, rpm</td>
+    <td>ksh, binutils, gcc, gcc-multilib, openssl, libgtk2.0-0, rpm, lsb-core</td>
   </tr>
   <tr>
     <td>debian WMQ9.0</td>

@@ -12,10 +12,6 @@
       "label": "Cloud Input Variables"
     },
     {
-      "name": "virtualmachine",
-      "label": "Virtual Machine Input Variables"
-    },
-    {
       "name": "ssh_keys",
       "label": "SSH Keys"
     },
@@ -24,12 +20,12 @@
       "label": "Environment"
     },
     {
-      "name": "mqv9node01",
-      "label": "MQV9Node01"
+      "name": "mqnode01",
+      "label": "MQNode01"
     },
     {
-      "name": "ungrouped",
-      "label": "ungrouped"
+      "name": "virtualmachine",
+      "label": "Virtual Machine Input Variables"
     }
   ],
   "output_groups": [
@@ -51,12 +47,35 @@
       "group_name": "environment"
     },
     {
-      "name": "MQV9Node01_wmq_advanced",
+      "name": "MQNode01_local_disk",
+      "type": "string",
+      "description": "User local disk or SAN disk",
+      "default": "false",
+      "hidden": false,
+      "label": "IBMCloud - Local / SAN Disk - MQNode01",
+      "secured": false,
+      "options": [
+        {
+          "value": "true",
+          "label": "True"
+        },
+        {
+          "value": "false",
+          "label": "False",
+          "default": "true"
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "cloud"
+    },
+    {
+      "name": "MQNode01_wmq_advanced",
       "type": "string",
       "description": "Install IBM MQ Advanced components: File Transfer, IBM MQ Telemetry, and Advanced Message Security.",
       "default": "false",
       "hidden": false,
-      "label": "IBM MQ Advanced Components - MQV9Node01",
+      "label": "IBM MQ Advanced Components - MQNode01",
       "secured": false,
       "options": [
         {
@@ -72,223 +91,223 @@
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_fixpack",
+      "name": "MQNode01_wmq_fixpack",
       "type": "string",
       "description": "The fixpack of IBM MQ to install.",
       "default": "1",
       "hidden": false,
-      "label": "IBM MQ Fixpack - MQV9Node01",
+      "label": "IBM MQ Fixpack - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_core_rmem_default",
+      "name": "MQNode01_wmq_net_core_rmem_default",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_core_rmem_default",
       "default": "10240",
       "hidden": false,
-      "label": "IBM MQ Kernel net_core_rmem_default - MQV9Node01",
+      "label": "IBM MQ Kernel net_core_rmem_default - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_core_rmem_max",
+      "name": "MQNode01_wmq_net_core_rmem_max",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_core_rmem_max",
       "default": "4194304",
       "hidden": false,
-      "label": "IBM MQ Kernel net_core_rmem_max - MQV9Node01",
+      "label": "IBM MQ Kernel net_core_rmem_max - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_core_wmem_default",
+      "name": "MQNode01_wmq_net_core_wmem_default",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_core_wmem_default",
       "default": "262144",
       "hidden": false,
-      "label": "IBM MQ Kernel net_core_wmem_default - MQV9Node01",
+      "label": "IBM MQ Kernel net_core_wmem_default - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_fin_timeout",
+      "name": "MQNode01_wmq_net_ipv4_tcp_fin_timeout",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_fin_timeout",
       "default": "60",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_fin_timeout - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_fin_timeout - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_keepalive_intvl",
+      "name": "MQNode01_wmq_net_ipv4_tcp_keepalive_intvl",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_intvl",
       "default": "75",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_intvl - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_intvl - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_keepalive_time",
+      "name": "MQNode01_wmq_net_ipv4_tcp_keepalive_time",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_time",
       "default": "7200",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_time - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_time - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_rmem",
+      "name": "MQNode01_wmq_net_ipv4_tcp_rmem",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_rmem",
       "default": "4096    87380   4194304",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_rmem - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_rmem - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_sack",
+      "name": "MQNode01_wmq_net_ipv4_tcp_sack",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_sack",
       "default": "1",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_sack - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_sack - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_timestamps",
+      "name": "MQNode01_wmq_net_ipv4_tcp_timestamps",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_timestamps",
       "default": "1",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_timestamps - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_timestamps - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_window_scaling",
+      "name": "MQNode01_wmq_net_ipv4_tcp_window_scaling",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_window_scaling",
       "default": "1",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_window_scaling - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_window_scaling - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_net_ipv4_tcp_wmem",
+      "name": "MQNode01_wmq_net_ipv4_tcp_wmem",
       "type": "string",
       "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_wmem",
       "default": "4096    87380   4194304",
       "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_wmem - MQV9Node01",
+      "label": "IBM MQ Kernel net_ipv4_tcp_wmem - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_perms",
+      "name": "MQNode01_wmq_perms",
       "type": "string",
       "description": "Default permissions for IBM MQ files on Unix",
       "default": "755",
       "hidden": false,
-      "label": "IBM MQ OS Permissions - MQV9Node01",
+      "label": "IBM MQ OS Permissions - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_description",
+      "name": "MQNode01_wmq_qmgr_qmgr1_description",
       "type": "string",
       "description": "Description of the Queue Manager",
       "default": "Default Queue Manager",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Description - MQV9Node01",
+      "label": "IBM MQ Queue Manager Description - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_listener_port",
+      "name": "MQNode01_wmq_qmgr_qmgr1_listener_port",
       "type": "string",
       "description": "Port the Queue Manager listens on.",
       "default": "1414",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Listener Port - MQV9Node01",
+      "label": "IBM MQ Queue Manager Listener Port - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_logsize",
+      "name": "MQNode01_wmq_qmgr_qmgr1_logsize",
       "type": "string",
       "description": "Size of the IBM MQ Logs",
       "default": "16384",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Log Size - MQV9Node01",
+      "label": "IBM MQ Queue Manager Log Size - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_loggingtype",
+      "name": "MQNode01_wmq_qmgr_qmgr1_loggingtype",
       "type": "string",
       "description": "Type of logging to use ll(Linear), lc(Circular)",
       "default": "lc",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Logging - MQV9Node01",
+      "label": "IBM MQ Queue Manager Logging - MQNode01",
       "secured": false,
       "options": [
         {
@@ -304,93 +323,93 @@
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_name",
+      "name": "MQNode01_wmq_qmgr_qmgr1_name",
       "type": "string",
       "description": "Name of the Queue Manager to Create",
       "default": "QMGR1",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Name - MQV9Node01",
+      "label": "IBM MQ Queue Manager Name - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_primarylogs",
+      "name": "MQNode01_wmq_qmgr_qmgr1_primarylogs",
       "type": "string",
       "description": "Number of primary logs to create.",
       "default": "10",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Primary Logs - MQV9Node01",
+      "label": "IBM MQ Queue Manager Primary Logs - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_secondarylogs",
+      "name": "MQNode01_wmq_qmgr_qmgr1_secondarylogs",
       "type": "string",
       "description": "Number of Secondary Logs",
       "default": "20",
       "hidden": false,
-      "label": "IBM MQ Queue Manager Secondary Logs - MQV9Node01",
+      "label": "IBM MQ Queue Manager Secondary Logs - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_qmgr_qmgr1_dlq",
+      "name": "MQNode01_wmq_qmgr_qmgr1_dlq",
       "type": "string",
       "description": "Queue Manager dead letter queue",
       "default": "SYSTEM.DEAD.LETTER.QUEUE",
       "hidden": false,
-      "label": "IBM MQ Queue Manager dead letter queue - MQV9Node01",
+      "label": "IBM MQ Queue Manager dead letter queue - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_service_name",
+      "name": "MQNode01_wmq_service_name",
       "type": "string",
       "description": "WebSphere MQ service name",
       "default": "mq",
       "hidden": false,
-      "label": "IBM MQ Service Name - MQV9Node01",
+      "label": "IBM MQ Service Name - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_swap_file_size",
+      "name": "MQNode01_wmq_swap_file_size",
       "type": "string",
       "description": "UNIX Swap size in megabytes",
       "default": "512",
       "hidden": false,
-      "label": "IBM MQ Unix swap file size - MQV9Node01",
+      "label": "IBM MQ Unix swap file size - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
-      "name": "MQV9Node01_wmq_version",
+      "name": "MQNode01_wmq_version",
       "type": "string",
       "description": "The Version of IBM MQ to install, eg, 8.0",
       "default": "9.0",
       "hidden": false,
-      "label": "IBM MQ Version - MQV9Node01",
+      "label": "IBM MQ Version - MQNode01",
       "secured": false,
       "options": [
         {
@@ -406,7 +425,7 @@
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
       "name": "ibm_pm_access_token",
@@ -469,36 +488,12 @@
       "group_name": "environment"
     },
     {
-      "name": "MQV9Node01_local_disk",
-      "type": "string",
-      "description": "User local disk or SAN disk",
-      "default": "false",
-      "hidden": false,
-      "label": "IBMCloud - Local / SAN Disk - MQV9Node01",
-      "secured": false,
-      "options": [
-        {
-          "value": "true",
-          "label": "True"
-        },
-        {
-          "value": "false",
-          "label": "False",
-          "default": "true"
-        }
-      ],
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
-    },
-    {
-      "name": "MQV9Node01_datacenter",
+      "name": "MQNode01_datacenter",
       "type": "string",
       "description": "IBMCloud datacenter where infrastructure resources will be deployed",
       "default": "dal09",
       "hidden": false,
-      "label": "IBMCloud Datacenter - MQV9Node01",
+      "label": "IBMCloud Datacenter - MQNode01",
       "secured": false,
       "options": [
         {
@@ -629,16 +624,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_dedicated_acct_host_only",
+      "name": "MQNode01_dedicated_acct_host_only",
       "type": "string",
       "description": "Shared or dedicated host, where dedicated host usually means higher performance and cost",
       "default": "false",
       "hidden": false,
-      "label": "IBMCloud Dedicate Account Host - MQV9Node01",
+      "label": "IBMCloud Dedicate Account Host - MQNode01",
       "secured": false,
       "options": [
         {
@@ -653,16 +647,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_hourly_billing",
+      "name": "MQNode01_hourly_billing",
       "type": "string",
       "description": "Billing cycle: hourly billed or monthly billed",
       "default": "true",
       "hidden": false,
-      "label": "IBMCloud Hourly Billing - MQV9Node01",
+      "label": "IBMCloud Hourly Billing - MQNode01",
       "secured": false,
       "options": [
         {
@@ -677,16 +670,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_network_speed",
+      "name": "MQNode01_network_speed",
       "type": "string",
       "description": "Bandwidth of network communication applied to the virtual machine",
       "default": 1000,
       "hidden": false,
-      "label": "IBMCloud Network Speed - MQV9Node01",
+      "label": "IBMCloud Network Speed - MQNode01",
       "secured": false,
       "options": [
         {
@@ -701,16 +693,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_private_network_only",
+      "name": "MQNode01_private_network_only",
       "type": "string",
       "description": "Provision the virtual machine with only private IP",
       "default": "false",
       "hidden": false,
-      "label": "IBMCloud Private Network - MQV9Node01",
+      "label": "IBMCloud Private Network - MQNode01",
       "secured": false,
       "options": [
         {
@@ -725,16 +716,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_memory",
+      "name": "MQNode01_memory",
       "type": "string",
       "description": "Amount of Memory (MBs), which is required to be one or more times of 1024",
       "default": 4096,
       "hidden": false,
-      "label": "IBMCloud VSI Memory - MQV9Node01",
+      "label": "IBMCloud VSI Memory - MQNode01",
       "secured": false,
       "options": [
         {
@@ -769,16 +759,15 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01_number_of_cores",
+      "name": "MQNode01_number_of_cores",
       "type": "string",
       "description": "Number of CPU cores, which is required to be a positive Integer",
       "default": 2,
       "hidden": false,
-      "label": "IBMCloud VSI Number of Cores - MQV9Node01",
+      "label": "IBMCloud VSI Number of Cores - MQNode01",
       "secured": false,
       "options": [
         {
@@ -813,102 +802,78 @@
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01-image",
+      "name": "MQNode01-image",
       "type": "string",
       "description": "Operating system image id / template that should be used when creating the virtual image",
       "default": "REDHAT_7_64",
       "hidden": false,
-      "label": "Operating System ID / Template - MQV9Node01",
+      "label": "Operating System ID / Template - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "group_name": "virtualmachine"
     },
     {
-      "name": "MQV9Node01-os_admin_user",
+      "name": "MQNode01-os_admin_user",
       "type": "string",
       "description": "Name of the admin user account in the virtual machine that will be accessed via SSH",
       "hidden": false,
-      "label": "Operating System Username - MQV9Node01",
+      "label": "Operating System Username - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "group_name": "virtualmachine"
     },
     {
-      "name": "MQV9Node01_root_disk_size",
+      "name": "MQNode01_root_disk_size",
       "type": "string",
-      "description": "Root Disk Size - MQV9Node01",
+      "description": "Root Disk Size - MQNode01",
       "default": "25",
       "hidden": false,
-      "label": "Root Disk Size - MQV9Node01",
+      "label": "Root Disk Size - MQNode01",
       "secured": false,
       "options": [
         {
           "value": "25",
-          "label": "25 GB",
-          "default": true
+          "label": "25 GB"
         },
         {
           "value": "100",
-          "label": "100 GB"
+          "label": "100 GB",
+          "default": true
         }
       ],
       "required": true,
       "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "cloud"
     },
     {
-      "name": "MQV9Node01-name",
+      "name": "MQNode01-name",
       "type": "string",
       "description": "Short hostname of virtual machine",
       "hidden": false,
-      "label": "Short hostname - MQV9Node01",
+      "label": "Short hostname - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
+      "immutable_after_create": true,
       "group_name": "virtualmachine"
     },
     {
-      "name": "MQV9Node01_wmq_swap_file",
+      "name": "MQNode01_wmq_swap_file",
       "type": "string",
       "description": "Swap file name",
       "default": "/swapfile",
       "hidden": false,
-      "label": "Swap Filename - MQV9Node01",
+      "label": "Swap Filename - MQNode01",
       "secured": false,
       "required": true,
       "immutable": false,
       "immutable_after_create": true,
-      "group_name": "mqv9node01"
-    },
-    {
-      "name": "MQV9Node01-mgmt-network-public",
-      "type": "string",
-      "description": "Expose and use public IP of virtual machine for internal communication",
-      "default": "true",
-      "hidden": false,
-      "label": "Use Public Management Network - MQV9Node01",
-      "secured": false,
-      "options": [
-        {
-          "value": false,
-          "label": false
-        },
-        {
-          "value": true,
-          "label": true
-        }
-      ],
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqv9node01"
+      "group_name": "mqnode01"
     },
     {
       "name": "ibm_pm_private_ssh_key",
@@ -935,6 +900,28 @@
       "default": "${advanced_content_runtime_chef.ibm_pm_public_ssh_key_name}"
     },
     {
+      "name": "MQNode01-mgmt-network-public",
+      "type": "string",
+      "description": "Expose and use public IP of virtual machine for internal communication",
+      "default": "true",
+      "hidden": false,
+      "label": "Use Public Management Network",
+      "secured": false,
+      "options": [
+        {
+          "value": false,
+          "label": false
+        },
+        {
+          "value": true,
+          "label": true
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "virtualmachine"
+    },
+    {
       "name": "user_public_ssh_key",
       "type": "string",
       "description": "User defined public SSH key used to connect to the virtual machine. The format must be in openSSH.",
@@ -944,6 +931,7 @@
       "secured": false,
       "required": true,
       "immutable": false,
+      "immutable_after_create": true,
       "group_name": "ssh_keys"
     },
     {
@@ -961,7 +949,7 @@
   ],
   "template_output_params": [
     {
-      "name": "MQV9Node01_ip",
+      "name": "MQNode01_ip",
       "label": "IP Addresss",
       "description": "The Public and Public IP address",
       "type": "string",
@@ -970,7 +958,7 @@
       "group_name": "content_template_output"
     },
     {
-      "name": "MQV9Node01_name",
+      "name": "MQNode01_name",
       "label": "Node Name",
       "description": "The chef node name",
       "type": "string",
@@ -979,7 +967,7 @@
       "group_name": "content_template_output"
     },
     {
-      "name": "MQV9Node01_roles",
+      "name": "MQNode01_roles",
       "label": "Chef Roles",
       "description": "The chef roles deployed",
       "type": "string",
