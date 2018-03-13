@@ -1,7 +1,7 @@
 {
     "name": "IBM MQ V9 on a single virtual machine - Amazon EC2",
     "description": "Install and configure IBM MQ V9 on a single Linux virtual machine.",
-    "version": "1.0.2",
+    "version": "2.0",
     "imageUrl": "",
     "image": "",
     "type": "chefcontent",
@@ -29,9 +29,6 @@
       "bullets": [{
     "title": "Clouds",
     "description": " Amazon<br>"},
-{
-    "title": "Template Version",
-    "description": "1.0.2<br>"},
 {
     "title": "Operating Systems Supported",
     "description": "Red Hat Enterprise Linux 7<br>Ubuntu 16.04 LTS<br>Ubuntu 14.04 LTS<br>"},
