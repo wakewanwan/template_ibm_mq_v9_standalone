@@ -244,30 +244,6 @@
       "group_name": "virtualmachine"
     },
     {
-      "name": "MQNode01_wmq_advanced",
-      "type": "string",
-      "description": "Install IBM MQ Advanced components: File Transfer, IBM MQ Telemetry, and Advanced Message Security.",
-      "default": "false",
-      "hidden": false,
-      "label": "IBM MQ Advanced Components - MQNode01",
-      "secured": false,
-      "options": [
-        {
-          "value": "true",
-          "label": "true"
-        },
-        {
-          "value": "false",
-          "label": "false",
-          "default": true
-        }
-      ],
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
       "name": "wmq_v9_install_wmq_data_dir",
       "type": "string",
       "description": "The directory to install IBM MQ Data files, recommended /var/mqm",
@@ -281,21 +257,6 @@
       "group_name": "environment"
     },
     {
-      "name": "MQNode01_wmq_fixpack",
-      "type": "string",
-      "description": "The fixpack of IBM MQ to install.",
-      "default": "2",
-      "hidden": false,
-      "label": "IBM MQ Fixpack - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "max": "20",
-      "min": "1",
-      "group_name": "mqnode01"
-    },
-    {
       "name": "wmq_v9_install_wmq_install_dir",
       "type": "string",
       "description": "The directory to install IBM MQ Binaries, recommended /opt/mqm",
@@ -307,149 +268,6 @@
       "immutable": false,
       "immutable_after_create": true,
       "group_name": "environment"
-    },
-    {
-      "name": "MQNode01_wmq_net_core_rmem_default",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_core_rmem_default",
-      "default": "10240",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_core_rmem_default - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_core_rmem_max",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_core_rmem_max",
-      "default": "4194304",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_core_rmem_max - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_core_wmem_default",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_core_wmem_default",
-      "default": "262144",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_core_wmem_default - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_fin_timeout",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_fin_timeout",
-      "default": "60",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_fin_timeout - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_keepalive_intvl",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_intvl",
-      "default": "75",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_intvl - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_keepalive_time",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_keepalive_time",
-      "default": "7200",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_keepalive_time - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_rmem",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_rmem",
-      "default": "4096    87380   4194304",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_rmem - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_sack",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_sack",
-      "default": "1",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_sack - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_timestamps",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_timestamps",
-      "default": "1",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_timestamps - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_window_scaling",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_window_scaling",
-      "default": "1",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_window_scaling - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_net_ipv4_tcp_wmem",
-      "type": "string",
-      "description": "WebSphere MQ Server Kernel Configuration net_ipv4_tcp_wmem",
-      "default": "4096    87380   4194304",
-      "hidden": false,
-      "label": "IBM MQ Kernel net_ipv4_tcp_wmem - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
     },
     {
       "name": "wmq_v9_install_wmq_log_dir",
@@ -476,19 +294,6 @@
       "immutable": false,
       "immutable_after_create": true,
       "group_name": "environment"
-    },
-    {
-      "name": "MQNode01_wmq_perms",
-      "type": "string",
-      "description": "Default permissions for IBM MQ files on Unix",
-      "default": "755",
-      "hidden": false,
-      "label": "IBM MQ OS Permissions - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
     },
     {
       "name": "wmq_v9_install_wmq_os_users_mqm_comment",
@@ -543,19 +348,6 @@
       "group_name": "environment"
     },
     {
-      "name": "MQNode01_wmq_qmgr_qmgr1_description",
-      "type": "string",
-      "description": "Description of the Queue Manager",
-      "default": "Default Queue Manager",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Description - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
       "name": "wmq_v9_install_wmq_qmgr_dir",
       "type": "string",
       "description": "The directory to install IBM MQ Queue Manager Directory, recommended node[wmq][data_dir]/qmgrs",
@@ -567,172 +359,6 @@
       "immutable": false,
       "immutable_after_create": true,
       "group_name": "environment"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_listener_port",
-      "type": "string",
-      "description": "Port the Queue Manager listens on.",
-      "default": "1414",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Listener Port - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "max": "50000",
-      "min": "1025",
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_logsize",
-      "type": "string",
-      "description": "Size of the IBM MQ Logs",
-      "default": "16384",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Log Size - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_loggingtype",
-      "type": "string",
-      "description": "Type of logging to use ll(Linear), lc(Circular)",
-      "default": "lc",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Logging - MQNode01",
-      "secured": false,
-      "options": [
-        {
-          "value": "ll",
-          "label": "ll"
-        },
-        {
-          "value": "lc",
-          "label": "lc",
-          "default": true
-        }
-      ],
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_name",
-      "type": "string",
-      "description": "Name of the Queue Manager to Create",
-      "default": "QMGR1",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Name - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_primarylogs",
-      "type": "string",
-      "description": "Number of primary logs to create.",
-      "default": "10",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Primary Logs - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_secondarylogs",
-      "type": "string",
-      "description": "Number of Secondary Logs",
-      "default": "20",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager Secondary Logs - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_qmgr_qmgr1_dlq",
-      "type": "string",
-      "description": "Queue Manager dead letter queue",
-      "default": "SYSTEM.DEAD.LETTER.QUEUE",
-      "hidden": false,
-      "label": "IBM MQ Queue Manager dead letter queue - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_service_name",
-      "type": "string",
-      "description": "WebSphere MQ service name",
-      "default": "mq",
-      "hidden": false,
-      "label": "IBM MQ Service Name - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "MQNode01_wmq_swap_file_size",
-      "type": "string",
-      "description": "UNIX Swap size in megabytes",
-      "default": "512",
-      "hidden": false,
-      "label": "IBM MQ Unix swap file size - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
-    },
-    {
-      "name": "wmq_v9_install_wmq_os_users_mqm_ldap_user",
-      "type": "string",
-      "description": "A flag which indicates whether to create the MQ USer locally, or utilise an LDAP based user.",
-      "hidden": false,
-      "label": "IBM MQ Use LDAP for Authentication",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "environment"
-    },
-    {
-      "name": "MQNode01_wmq_version",
-      "type": "string",
-      "description": "The Version of IBM MQ to install, eg, 8.0",
-      "default": "9.0",
-      "hidden": false,
-      "label": "IBM MQ Version - MQNode01",
-      "secured": false,
-      "options": [
-        {
-          "value": "8.0",
-          "label": "8.0"
-        },
-        {
-          "value": "9.0",
-          "label": "9.0",
-          "default": true
-        }
-      ],
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
     },
     {
       "name": "ibm_pm_access_token",
@@ -876,19 +502,6 @@
       "required": true,
       "immutable": false,
       "group_name": "virtualmachine"
-    },
-    {
-      "name": "MQNode01_wmq_swap_file",
-      "type": "string",
-      "description": "Swap file name",
-      "default": "/swapfile",
-      "hidden": false,
-      "label": "Swap Filename - MQNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "immutable_after_create": true,
-      "group_name": "mqnode01"
     },
     {
       "name": "MQNode01_root_disk_datastore",
